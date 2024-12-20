@@ -8,12 +8,17 @@ version = "0.0.1"
 description = "Tailwind CSS package for FastHTML."
 authors = [{ name = "lmbelo", email = "lucas.belo@live.com" }]
 dependencies = ["python-fasthtml>=0.10.1"]
+readme = {file = "README.txt", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+]
 
 [project.optional-dependencies]
 flowbite = [
     "fh_flowbite>=0.0.1",
 ]
-
-[tool.setuptools]
-long_description = {file = "README.md"}
-long_description_content_type = "text/markdown"  # Change to "text/x-rst" if using reStructuredText
