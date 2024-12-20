@@ -21,16 +21,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine
+        pip install build
 
     - name: Build package
       run: |
         python -m build
 
     - name: Publish to PyPI
-      env:
-        TWINE_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
-      run: |
-        # Disable the use of keyring to avoid warnings
-        export TWINE_DISABLE_KEYRING=true
-        python -m twine upload dist/*
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        user: ${{ secrets.PYPI_USER_NAME }}
+        password: ${{ secrets.PYPI_API_TOKEN }}
