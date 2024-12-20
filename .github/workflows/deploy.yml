@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - "v*"
-  workflow_dispatch:
+  workflow_dispatch:  # Enables manual trigger
 
 jobs:
   deploy:
@@ -31,4 +31,6 @@ jobs:
       env:
         TWINE_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
       run: |
+        # Disable the use of keyring to avoid warnings
+        export TWINE_DISABLE_KEYRING=true
         python -m twine upload dist/*
