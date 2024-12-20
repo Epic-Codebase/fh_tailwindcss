@@ -43,6 +43,27 @@ Run the following command to start the Tailwind CSS build process:
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 ```
 
+#### 1.5 Use Custom CSS from fh_tailwindcss
+
+To customize your styles, follow these steps:
+
+Copy the tailwind.css.template file and paste it into your CSS folder.
+
+Import the tailwind.css file into your input.css:
+```css
+@import './src/static/css/tailwind.css';
+```
+It will look like this:
+```css
+/* Add your Tailwind directives if needed */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* input.css */
+@import './src/static/css/tailwind.css';
+```
+
 ### Step 2: Integrate Tailwind CSS into FastHTML
 
 #### 2.1 Link the Compiled CSS File
