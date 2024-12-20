@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fh_tailwind"
+version = "0.0.1"
+description = "Tailwind CSS package for FastHTML."
+authors = [{ name = "lmbelo", email = "lucas.belo@live.com" }]
+dependencies = ["python-fasthtml>=0.10.1"]
+
+[project.optional-dependencies]
+flowbite = [
+    "fh_flowbite>=0.0.1",
+]
