@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fh_tailwindcss"
-version = "0.0.2"
+version = "0.0.1"
 description = "Tailwind CSS package for FastHTML."
 authors = [{ name = "lmbelo", email = "lucas.belo@live.com" }]
 dependencies = ["python-fasthtml>=0.10.1"]
-readme = {file = "README.txt", content-type = "text/markdown"}
 license = {file = "LICENSE"}
+readme = {file="README.md", content-type="text/markdown"}
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
