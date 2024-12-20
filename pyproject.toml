@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fh_tailwindcss"
-version = "0.0.1"
+version = "0.0.3"
 description = "Tailwind CSS package for FastHTML."
 authors = [{ name = "lmbelo", email = "lucas.belo@live.com" }]
 dependencies = ["python-fasthtml>=0.10.1"]
