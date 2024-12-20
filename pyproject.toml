@@ -4,15 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fh_tailwindcss"
-version = "0.0.2"
+version = "0.0.1"
 description = "Tailwind CSS package for FastHTML."
 authors = [{ name = "lmbelo", email = "lucas.belo@live.com" }]
 dependencies = ["python-fasthtml>=0.10.1"]
-
-long_description = {file = "README.md"}
-long_description_content_type = "text/markdown"
 
 [project.optional-dependencies]
 flowbite = [
     "fh_flowbite>=0.0.1",
 ]
+
+[tool.setuptools]
+long_description = {file = "README.md"}
+long_description_content_type = "text/markdown"  # Change to "text/x-rst" if using reStructuredText
