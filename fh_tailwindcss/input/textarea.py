@@ -6,16 +6,16 @@ from ..style import Width, FontSize, BorderRadius
 @delegates(fh.ft_hx, keep=True)
 class Textarea(Tailwind):
     
-    def __init__(self, *w, width: Width = Width.FULL, text_size: FontSize = FontSize.SMALL, border: BorderRadius = BorderRadius.LARGE, **kwargs):
+    def __init__(self, *w, width: Width = Width.FULL, font_size: FontSize = FontSize.SMALL, border: BorderRadius = BorderRadius.LARGE, **kwargs):
         """
         A TailwindCSS input component.
         Args:
             *w: Variable length argument list for additional positional arguments.
-            text_size (TextSize, optional): The text size for the input component. Defaults to TextSize.SMALL.
+            font_size (TextSize, optional): The text size for the input component. Defaults to TextSize.SMALL.
             border (BorderRadius, optional): The border radius for the input component. Defaults to BorderRadius.LARGE.
             **kwargs: Arbitrary keyword arguments for additional properties.      
         """
-        super().__init__(*list(w) + [width, text_size, border], **kwargs)
+        super().__init__(*list(w) + [width, font_size, border], **kwargs)
 
 
     def __ft__(self) -> fh.FT:
