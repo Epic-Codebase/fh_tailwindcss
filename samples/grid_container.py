@@ -88,6 +88,7 @@ def get():
                 },
             ),          
             ContainerWidth.XLARGE2,
+            Paddings({Padding.DEFAULT: 5}),
             screen_mapping=None, # If you don't care for screen sizes...
         )
     )
