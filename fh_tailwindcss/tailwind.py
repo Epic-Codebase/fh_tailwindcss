@@ -1,18 +1,61 @@
 from abc import ABC, abstractmethod
+from enum import Enum
 from fastcore.meta import delegates
 from fasthtml.common import ft_hx, FT
 
+
+class TailwindCSS:
+    """
+    Base Tailwin CSS class. Any Tailwind component that produces a CSS string derives from this class.
+    """
+
+    @abstractmethod
+    def __css__(self) -> str:
+        pass
+
+
 @delegates(ft_hx, keep=True)
 class Tailwind(ABC):
+    """Base Tailwind CSS component class. Any Tailwind component that produces a FT derives from this class."""
 
     def __init__(self, *w, **kwargs):
-        self.w = w
+        self.css_components, self.w = self.__extract_css_types_from_list__(w)
         self.kwargs = kwargs
+
+
+    def __extract_css_types_from_list__(self, any_list):
+        """Separates CSS components and NON-CSS components from any list."""
+
+        css_components = []
+        non_css_components = []
+        for item in any_list[:]:
+            # The Tailwind class implements the "__css__" method, but it does not produce CSS, only build CSS from CSS producers.
+            if hasattr(item, '__css__') and not hasattr(item, '__ft__'):
+                css_components.append(item)
+            else:                
+                non_css_components.append(item)
+            
+        return css_components, non_css_components
+
+
+    def get_css_from_list(self, list) -> str:
+        result = []
+        for item in list:
+            if hasattr(item, '__css__'):
+                result.append(item.__css__())
+        return ' '.join(result)
+
+
+    def __css__(self):
+        return self.get_css_from_list(self.css_components)
+    
 
     @abstractmethod
     def __ft__(self) -> FT:
-        """Generates the TailwindCSS component. Should not be called by users directly."""
+        """Generates the Tailwind CSS component."""
+
         pass
+    
     
     @staticmethod
     def generate_hx_vals(vals: list, defaults: dict = None):
@@ -43,3 +86,27 @@ class Tailwind(ABC):
 
         # Return the full JavaScript expression wrapped in curly braces
         return f"js:{{ {combined_js} }}"
+    
+
+class TailwindEnum(TailwindCSS, Enum):
+    """Base Tailwind CSS enum class. Any enum that produces a CSS derives from this class."""
+
+    def __css__(self) -> str:
+        return self.value if self else ""
+
+
+class TailwindDict(TailwindCSS, dict):
+    """Base Tailwind CSS dict class. Any dict that produces a CSS derives from this class."""
+
+    def __css__(self):
+        return ' '.join([f"{key.__css__() if hasattr(key, '__css__') else str(key)}-{str(val)}" for key, val in self.items() if val is not None])
+    
+
+class TailwindRawCSS(TailwindCSS):
+
+    def __init__(self, css):
+        self.css = css
+
+
+    def __css__(self) -> str:
+        return self.css

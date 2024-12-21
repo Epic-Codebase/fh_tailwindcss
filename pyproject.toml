@@ -18,6 +18,11 @@ classifiers = [
   "Programming Language :: Python :: 3",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fh_tailwindcss*"]
+exclude = ["samples"]    
+
 [project.optional-dependencies]
 flowbite = [
     "fh_flowbite>=0.0.1",

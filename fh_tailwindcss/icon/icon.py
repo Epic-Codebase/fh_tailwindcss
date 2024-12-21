@@ -1,6 +1,6 @@
 from fastcore.meta import delegates
 from fasthtml.common import *
-from .tailwind import Tailwind
+from ..tailwind import Tailwind
 
 @delegates(ft_hx, keep=True)
 class Icon(Tailwind):
