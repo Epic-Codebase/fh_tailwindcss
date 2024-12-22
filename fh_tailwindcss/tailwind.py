@@ -102,11 +102,27 @@ class TailwindDict(TailwindCSS, dict):
         return ' '.join([f"{key.__css__() if hasattr(key, '__css__') else str(key)}-{str(val)}" for key, val in self.items() if val is not None])
     
 
-class TailwindRawCSS(TailwindCSS):
+class TailwindStack(TailwindDict):
+    """Base Tailwind CSS [modifiers] stack."""
 
-    def __init__(self, css):
-        self.css = css
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.separator = ':'
 
 
-    def __css__(self) -> str:
-        return self.css
+    def __css__(self):
+        css = []
+        for key, value in self.items():
+            if isinstance(value, (tuple, list)):
+                for item in value:
+                    key_css = key.__css__()
+                    prefix = key_css + self.separator if key_css else ''
+
+                    if hasattr(item, '__css__'):
+                        item = ' '.join([prefix + item for item in str(item.__css__()).split(' ')])
+                    else:
+                        item = prefix + str(item)
+
+                    css.append(item)
+
+        return ' '.join(css)

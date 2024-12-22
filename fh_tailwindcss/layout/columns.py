@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ..tailwind import TailwindEnum
 
 # https://tailwindcss.com/docs/columns
 

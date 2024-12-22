@@ -1,7 +1,7 @@
 import fasthtml.common as fh
 from fastcore.meta import delegates
 from ..tailwind import Tailwind
-from ..style import Margins, Margin, Paddings, FontWeight, FontSize
+from ..utility import Margins, Margin, FontWeight, FontSize
 
 @delegates(fh.ft_hx, keep=True)
 class Label(Tailwind):

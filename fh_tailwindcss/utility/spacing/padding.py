@@ -1,4 +1,4 @@
-from ..tailwind import TailwindDict, TailwindEnum
+from ...tailwind import TailwindDict, TailwindEnum
 
 # https://tailwindcss.com/docs/padding
 

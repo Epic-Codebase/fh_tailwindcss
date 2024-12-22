@@ -1,4 +1,4 @@
-from ..tailwind import TailwindEnum
+from ...tailwind import TailwindEnum
 
 # https://chatgpt.com/c/67621b7c-4b24-8008-a905-a66e8581eca4
 

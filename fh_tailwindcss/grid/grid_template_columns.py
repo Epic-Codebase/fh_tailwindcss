@@ -2,7 +2,7 @@ from ..tailwind import TailwindEnum
 
 # https://tailwindcss.com/docs/grid-template-columns
 
-class GridColumns(TailwindEnum):
+class GridTemplateColumns(TailwindEnum):
     """
     Enum class representing Tailwind CSS grid column classes.
 

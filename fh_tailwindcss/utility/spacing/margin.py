@@ -1,4 +1,4 @@
-from ..tailwind import TailwindEnum, TailwindDict
+from ...tailwind import TailwindEnum, TailwindDict
 
 # https://tailwindcss.com/docs/margin
 

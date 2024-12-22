@@ -2,7 +2,7 @@ from fastcore.meta import delegates
 from fasthtml.common import ft_hx, FT, Div
 from ..tailwind import Tailwind
 from ..text import Label
-from ..style import Padding, Paddings
+from ..utility import Padding, Paddings
 from .textarea import Textarea
 
 @delegates(ft_hx, keep=True)

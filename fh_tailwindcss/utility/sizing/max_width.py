@@ -1,8 +1,8 @@
 from ...tailwind import TailwindEnum
 
-# https://tailwindcss.com/docs/container
+# https://tailwindcss.com/docs/max-width
 
-class ContainerWidth(TailwindEnum):
+class MaxWidth(TailwindEnum):
     """
     Enum class representing container width breakpoints for Tailwind CSS.
 

@@ -1,7 +1,7 @@
 import fasthtml.common as fh
 from fastcore.meta import delegates
 from ..tailwind import Tailwind
-from ..style import Width, FontSize, BorderRadius
+from ..utility import Width, FontSize, BorderRadius
 
 @delegates(fh.ft_hx, keep=True)
 class Textarea(Tailwind):

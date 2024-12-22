@@ -1,3 +1,4 @@
 from .label import Label
 
-__all__ = ["Label"]
+__all__ = [
+    'Label']

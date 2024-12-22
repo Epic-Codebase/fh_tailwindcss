@@ -1,23 +1,23 @@
 from fastcore.meta import delegates
 from fasthtml.common import *
 from ..tailwind import Tailwind
-from ..style import ScreenMapping, ScreenSize
-from .style import ContainerWidth
+from ..modifier import ResponsiveBreakpoint, ResponsiveBreakpointStack
+from ..utility import MaxWidth
 
 # https://tailwindcss.com/docs/container
 
 @delegates(ft_hx, keep=True)
 class Container(Tailwind):
 
-    DEFAULT_WIDTH = ContainerWidth.NONE
+    DEFAULT_WIDTH = MaxWidth.NONE
 
-    DEFAULT_SCREEN_MAPPING = ScreenMapping({
-        ScreenSize.DEFAULT: [
+    DEFAULT_RESPONSIVE_BREAKPOINT = ResponsiveBreakpointStack({
+        ResponsiveBreakpoint.DEFAULT: [
             DEFAULT_WIDTH,
         ]
     })
 
-    def __init__(self, *w, screen_mapping: ScreenMapping = DEFAULT_SCREEN_MAPPING, **kwargs):
+    def __init__(self, *w, **kwargs):
         """
         A TailwindCSS grid container component.
 
@@ -26,9 +26,7 @@ class Container(Tailwind):
                 Defaults to DEFAULT_SCREEN_MAPPING.
         """
 
-        screen_mapping = screen_mapping if isinstance(screen_mapping, ScreenMapping) else ScreenMapping(screen_mapping if screen_mapping else {})
-        
-        super().__init__(*list(w) + [screen_mapping], **kwargs)
+        super().__init__(*w, **kwargs)
 
 
     def __ft__(self) -> FT:
