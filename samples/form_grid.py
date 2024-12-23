@@ -22,10 +22,14 @@ app,rt = fast_app(
 
 @rt('/')
 def get():
-    id_input_settings = (
+    input_settings= (
         Paddings({Padding.DEFAULT: 1.5}),
         FontSize.SMALL,
         BorderRadius.LARGE,
+    )
+    
+    id_input_settings = (
+        *input_settings,
         Width.REM20,
         # sm:hover:w-full
         # sm:focus:border-purple-500
@@ -40,9 +44,7 @@ def get():
     )
 
     email_input_settings = (
-        Paddings({Padding.DEFAULT: 1.5}),
-        FontSize.SMALL,
-        BorderRadius.LARGE,
+        *input_settings,
         Width.PER1_4,
         # invalid:border-pink-500
         PseudoClassStack({
