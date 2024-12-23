@@ -28,10 +28,6 @@ class Grid(Tailwind):
     def __init__(self, *w, **kwargs):
         """
         A TailwindCSS grid container component.
-
-        args:
-            screen_mapping (ScreenMapping, optional): A mapping of screen sizes to grid properties. 
-                Defaults to DEFAULT_SCREEN_MAPPING.
         """
         
         super().__init__(*list(w) + [Display.GRID], **kwargs)

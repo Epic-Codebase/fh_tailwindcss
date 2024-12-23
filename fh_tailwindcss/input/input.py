@@ -6,17 +6,6 @@ from ..utility import Width, FontSize, BorderRadius
 @delegates(fh.ft_hx, keep=True)
 class Input(Tailwind):
     
-    def __init__(self, *w, width: Width = Width.FULL, font_size: FontSize = FontSize.SMALL, border: BorderRadius = BorderRadius.LARGE, **kwargs):
-        """
-        A TailwindCSS input component.
-        Args:
-            *w: Variable length argument list for additional positional arguments.
-            font_size: The text size for the input component. Defaults to TextSize.SMALL.
-            BorderRadius: The border radius for the input component. Defaults to BorderRadius.LARGE.            
-            **kwargs: Arbitrary keyword arguments for additional properties.      
-        """
-        super().__init__(*list(w) + [width, font_size, border], **kwargs)
-        
 
     def __ft__(self) -> fh.FT:
         """Generates the TailwindCSS input."""

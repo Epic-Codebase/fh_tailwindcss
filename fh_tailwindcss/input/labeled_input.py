@@ -2,23 +2,36 @@ from fastcore.meta import delegates
 from fasthtml.common import ft_hx, FT, Div
 from ..tailwind import Tailwind
 from ..text import Label
-from ..utility import Padding, Paddings
+from ..utility import Width, Padding, Paddings, Margin, Margins, FontSize, FontWeight, BorderRadius
 from .input import Input
 
 @delegates(ft_hx, keep=True)
 class LabeledInput(Tailwind):
-    
-    def __init__(self, label: str | Label, *w, input: Input = None, **kwargs):
+
+    DEFAULT_INPUT_SETTINGS = (
+        Width.FULL,
+        Paddings({Padding.DEFAULT: 1.5}),
+        FontSize.SMALL,
+        BorderRadius.LARGE
+    )
+
+    DEFAULT_LABEL_SETTINGS = (
+        Margins({Margin.TOP: 1, Margin.BOTTOM:1}),
+        FontWeight.MEDIUM,
+        FontSize.SMALL
+    )
+
+    def __init__(self, label: str, *w, label_settings = DEFAULT_LABEL_SETTINGS, input_settings = DEFAULT_INPUT_SETTINGS, **kwargs):
         """A TailwindCSS label and input in a container
 
         Args:
             label (str): Label text
             *w: Additional input child elements
             **kwargs: Additional input attributes
-        """
+        """        
 
-        input = input or Input(*w, Paddings({Padding.DEFAULT: 1.5}), **kwargs)
-        label = label if isinstance(label, Label) else Label(label, fr=getattr(input, 'id', None))
+        input = Input(*w + tuple(input_settings), **kwargs)
+        label = Label(label, *label_settings, fr=getattr(input, 'id', None))
 
         super().__init__(*list(w) + [label, input], **kwargs)
 

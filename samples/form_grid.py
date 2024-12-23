@@ -1,6 +1,5 @@
 from fasthtml.common import fast_app, serve, Meta, Script, Main, Span
-from fh_tailwindcss import Grid, GridTemplateColumns, GridColumnStartEnd, LabeledInput, ResponsiveBreakpointStack, ResponsiveBreakpoint, PseudoClass, PseudoClassStack, StateGroup, Width
-from fh_tailwindcss.tailwind import Tailwind
+from fh_tailwindcss import *
 
 app,rt = fast_app(
     pico=False,
@@ -22,21 +21,42 @@ app,rt = fast_app(
 )
 
 @rt('/')
-def get(): 
+def get():
+    id_input_settings = (
+        Paddings({Padding.DEFAULT: 1.5}),
+        FontSize.SMALL,
+        BorderRadius.LARGE,
+        Width.REM20,
+        # sm:hover:w-full
+        # sm:focus:border-purple-500
+        ResponsiveBreakpointStack({
+            ResponsiveBreakpoint.SMALL: [     
+                PseudoClassStack({
+                    PseudoClass.HOVER: [Width.FULL],
+                    PseudoClass.FOCUS: [BorderColors({BorderColor.BORDER_PURPLE: 500})]
+                })
+            ]
+        }),  
+    )
+
+    email_input_settings = (
+        Paddings({Padding.DEFAULT: 1.5}),
+        FontSize.SMALL,
+        BorderRadius.LARGE,
+        Width.PER1_4,
+        # invalid:border-pink-500
+        PseudoClassStack({
+            PseudoClass.INVALID: [BorderColors({BorderColor.BORDER_PINK: 500})]    
+        }) 
+    )
+
     return Main(
         Grid(
+            Gaps({Gap.DEFAULT: 2}),
             GridTemplateColumns.COLS_1,
-            LabeledInput("ID:", Width.PER1_6, type='text'),
-            # md:hover:
-            ResponsiveBreakpointStack({
-                ResponsiveBreakpoint.DEFAULT: [
-                    PseudoClassStack({
-                        StateGroup.GROUP_HOVER: [
-                            GridTemplateColumns.COLS_1
-                        ]
-                    })
-                ]
-            }),                  
+            Margins({Margin.TOP: 1, Margin.BOTTOM: 1}),
+            LabeledInput("ID:", input_settings=id_input_settings, type='text'),
+            LabeledInput("Email", input_settings=email_input_settings, type="email")        
         ),
     )
 
