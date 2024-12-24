@@ -14,6 +14,8 @@ class Padding(TailwindEnum):
         LEFT (str): Applies padding at the left.
         HORIZONTAL (str): Applies horizontal padding (left and right).
         VERTICAL (str): Applies vertical padding (top and bottom).
+        INLINE_START (str): Applies inline start padding.
+        INLINE_END (str): Applies inline end padding.
     """
     DEFAULT = "p"
     TOP = "pt"
@@ -22,6 +24,8 @@ class Padding(TailwindEnum):
     LEFT = "pl"
     HORIZONTAL = "px"
     VERTICAL = "py"
+    INLINE_START = "ps"
+    INLINE_END = "pe"
     
 
 class Paddings(TailwindDict, dict[Padding, int]):
