@@ -3,7 +3,7 @@ from .border import (
     BorderColors, 
     BorderRadius, 
     BorderStyle, 
-    BorderWidth, 
+    BorderWidth, BorderWidths,
     DivideUtilities, 
     RingUtilities)
 from .layout import Display
@@ -24,7 +24,7 @@ from .background import (
 
 __all__ = [
     'BackgroundAttachment', 'BackgroundClip', 'BackgroundColor', 'BackgroundColors', 'BackgroundOrigin', 'BackgroundPosition', 'BackgroundRepeat', 'BackgroundSize', 'BackgroundImage', 'GradientColorStop', 'GradientColorStops',
-    'BorderColor', 'BorderColors', 'BorderRadius', 'BorderStyle', 'BorderWidth', 'DivideUtilities', 'RingUtilities',
+    'BorderColor', 'BorderColors', 'BorderRadius', 'BorderStyle', 'BorderWidth', 'BorderWidths', 'DivideUtilities', 'RingUtilities',
     'Display',
     'Height', 'Width', 'Size', 'MaxWidth',
     'Margin', 'Margins', 'Padding', 'Paddings',

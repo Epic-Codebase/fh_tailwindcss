@@ -10,7 +10,7 @@ from .modifier import (
     StateGroup, StateGroupStack
 )
 from .utility import (
-    BorderColor, BorderColors, BorderRadius, BorderStyle, BorderWidth, DivideUtilities, RingUtilities,
+    BorderColor, BorderColors, BorderRadius, BorderStyle, BorderWidth, BorderWidths, DivideUtilities, RingUtilities,
     Display, Height, Width, Size, MaxWidth,
     Margin, Margins, Padding, Paddings,
     FontSize, FontWeight,
@@ -38,7 +38,7 @@ __all__ = [
     'PseudoElement', 'PseudoElementStack',
     'ResponsiveBreakpoint', 'ResponsiveBreakpointStack',
     'StateGroup', 'StateGroupStack',
-    'BorderColor', 'BorderColors', 'BorderRadius', 'BorderStyle', 'BorderWidth', 'DivideUtilities', 'RingUtilities',
+    'BorderColor', 'BorderColors', 'BorderRadius', 'BorderStyle', 'BorderWidth', 'BorderWidths', 'DivideUtilities', 'RingUtilities',
     'Display', 'Height', 'Width', 'Size', 'MaxWidth',
     'Gap', 'Gaps', 'Margin', 'Margins', 'Padding', 'Paddings',
     'FontSize', 'FontWeight',

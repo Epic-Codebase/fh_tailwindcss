@@ -24,7 +24,7 @@ app,rt = fast_app(
 def get():
     input_settings= (
         Paddings({Padding.DEFAULT: 1.5}),
-        FontSize.SMALL,
+        FontSize.XSMALL, # Defines the input height
         BorderRadius.LARGE,
     )
     
@@ -54,7 +54,10 @@ def get():
         Width.PER1_4,
         # invalid:border-pink-500
         PseudoClassStack({
-            PseudoClass.INVALID: [BorderColors({BorderColor.BORDER_PINK: 500})]    
+            PseudoClass.INVALID: [
+                BorderWidths({BorderWidth.BORDER: 1.5}),
+                BorderColors({BorderColor.BORDER_ROSE: 600})
+            ]    
         }) 
     )
 

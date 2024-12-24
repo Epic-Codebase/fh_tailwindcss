@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ...tailwind import TailwindEnum, TailwindDict
 
 # https://tailwindcss.com/docs/border-width
 
@@ -23,3 +23,7 @@ class BorderWidth(TailwindEnum):
     BORDER_8 = "border-8"
     BORDER_X = "border-x"
     BORDER_Y = "border-y"
+
+
+class BorderWidths(TailwindDict):
+    pass

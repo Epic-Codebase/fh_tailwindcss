@@ -88,6 +88,18 @@ class Tailwind(ABC):
         return f"js:{{ {combined_js} }}"
     
 
+class TailwindRaw(TailwindCSS):
+    """A class to represent raw Tailwind CSS content."""
+
+
+    def __init__(self, raw: str):
+        self.raw = raw
+
+
+    def __css__(self) -> str:
+        return self.raw
+
+
 class TailwindEnum(TailwindCSS, Enum):
     """Base Tailwind CSS enum class. Any enum that produces a CSS derives from this class."""
 

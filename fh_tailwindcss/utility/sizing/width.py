@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ...tailwind import TailwindEnum, TailwindRaw
 
 # https://tailwindcss.com/docs/width
 
@@ -119,3 +119,8 @@ class Width(TailwindEnum):
     SVW = "w-svw"               # 100svw (viewport width in svw units)
     LVW = "w-lvw"               # 100lvw (viewport width in lvw units)
     DVW = "w-dvw"               # 100dvw (viewport width in dvw units)
+
+    
+    @staticmethod
+    def arbitrary(val) -> TailwindRaw:
+        return TailwindRaw(f"w-[{val}]")

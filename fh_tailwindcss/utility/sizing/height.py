@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ...tailwind import TailwindEnum, TailwindRaw
 
 # https://tailwindcss.com/docs/height
 
@@ -41,6 +41,7 @@ class Height(TailwindEnum):
         SVH (str): 100svh (viewport height in svh units).
         LVH (str): 100lvh (viewport height in lvh units).
         DVH (str): 100dvh (viewport height in dvh units).
+        ARBITRARY (str): Supports arbitrary values. e.g. h-[32rem]
     """
 
     FULL = "h-full"             # 100%
@@ -77,3 +78,7 @@ class Height(TailwindEnum):
     SVH = "h-svh"               # 100svh (viewport height in svh units)
     LVH = "h-lvh"               # 100lvh (viewport height in lvh units)
     DVH = "h-dvh"               # 100dvh (viewport height in dvh units)
+    
+    @staticmethod
+    def arbitrary(val) -> TailwindRaw:
+        return TailwindRaw(f"h-[{val}]")

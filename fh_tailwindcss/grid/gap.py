@@ -16,7 +16,7 @@ class Gap(TailwindEnum):
         - GAP_Y_PX: [row] "1px"
     """
     
-    GAP = "gap"
+    DEFAULT = "gap"
     GAP_X = "gap-x"
     GAP_Y = "gap-y"
     GAP_PX = "gap-px"
