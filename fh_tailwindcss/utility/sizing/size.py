@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ...tailwind import TailwindEnum, TailwindRaw
 
 # https://tailwindcss.com/docs/size
 
@@ -9,6 +9,9 @@ class Size(TailwindEnum):
     This includes fixed sizes, percentage-based sizes, fractional sizes, and content-fit utilities.
 
     Each enum field maps to a corresponding size class that applies equal width and height.
+
+    Methods:
+        arbitrary (str): Supports arbitrary values. e.g. size-[32rem]
     """
     SIZE_0 = "size-0"  # width: 0px; height: 0px;
     SIZE_PX = "size-px"  # width: 1px; height: 1px;
@@ -78,3 +81,8 @@ class Size(TailwindEnum):
     SIZE_MIN = "size-min"  # width: min-content; height: min-content;
     SIZE_MAX = "size-max"  # width: max-content; height: max-content;
     SIZE_FIT = "size-fit"  # width: fit-content; height: fit-content;
+
+
+    @staticmethod
+    def arbitrary(val) -> TailwindRaw:
+        return TailwindRaw(f"size-[{val}]")

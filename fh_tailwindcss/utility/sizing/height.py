@@ -41,7 +41,9 @@ class Height(TailwindEnum):
         SVH (str): 100svh (viewport height in svh units).
         LVH (str): 100lvh (viewport height in lvh units).
         DVH (str): 100dvh (viewport height in dvh units).
-        ARBITRARY (str): Supports arbitrary values. e.g. h-[32rem]
+
+    Methods:
+        arbitrary (str): Supports arbitrary values. e.g. h-[32rem]
     """
 
     FULL = "h-full"             # 100%

@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum
+from ...tailwind import TailwindEnum, TailwindRaw
 
 # https://tailwindcss.com/docs/max-width
 
@@ -13,6 +13,9 @@ class MaxWidth(TailwindEnum):
         LARGE (str): max-width: 1024px.
         XLARGE (str): max-width: 1280px.
         XLARGE2 (str): max-width: 1536px.
+
+    Methods:
+        arbitrary (str): Supports arbitrary values. e.g. max-w-[220px]
     """
     
     NONE = "max-w-none"      # No width constraint
@@ -21,4 +24,9 @@ class MaxWidth(TailwindEnum):
     LARGE = "max-w-lg"       # max-width: 1024px
     XLARGE = "max-w-xl"      # max-width: 1280px
     XLARGE2 = "max-w-2xl"    # max-width: 1536px
+
+
+    @staticmethod
+    def arbitrary(val) -> TailwindRaw:
+        return TailwindRaw(f"max-w-[{val}]")
     
