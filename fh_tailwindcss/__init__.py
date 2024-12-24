@@ -12,15 +12,16 @@ from .modifier import (
 from .utility import (
     BorderColor, BorderColors, BorderRadius, BorderStyle, BorderWidth, DivideUtilities, RingUtilities,
     Display, Height, Width, Size, MaxWidth,
-    Gap, Gaps, Margin, Margins, Padding, Paddings,
-    FontSize, FontWeight
+    Margin, Margins, Padding, Paddings,
+    FontSize, FontWeight,
+    BackgroundAttachment, BackgroundClip, BackgroundColor, BackgroundColors, BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, BackgroundImage, GradientColorStop, GradientColorStops
 )
 from .layout import (
     Columns, Container
 )
 from .text import Label
 from .input import (Input, Textarea, LabeledInput, Textarea)
-from .grid import (GridTemplateColumns, GridColumnStartEnd, GridTemplateRows, Grid, InlineGrid)
+from .grid import (GridTemplateColumns, GridColumnStartEnd, GridTemplateRows, Gap, Gaps, Grid, InlineGrid)
 
 
 #try:
@@ -41,6 +42,7 @@ __all__ = [
     'Display', 'Height', 'Width', 'Size', 'MaxWidth',
     'Gap', 'Gaps', 'Margin', 'Margins', 'Padding', 'Paddings',
     'FontSize', 'FontWeight',
+    'BackgroundAttachment', 'BackgroundClip', 'BackgroundColor', 'BackgroundColors', 'BackgroundOrigin', 'BackgroundPosition', 'BackgroundRepeat', 'BackgroundSize', 'BackgroundImage', 'GradientColorStop', 'GradientColorStops',
     'Columns', 'Container',
     'Label',
     'Input', 'Textarea', 'LabeledInput',

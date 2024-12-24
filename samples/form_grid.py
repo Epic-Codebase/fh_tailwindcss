@@ -39,6 +39,12 @@ def get():
                     PseudoClass.HOVER: [Width.FULL],
                     PseudoClass.FOCUS: [BorderColors({BorderColor.BORDER_PURPLE: 500})]
                 })
+            ],
+            ResponsiveBreakpoint.LARGE: [
+                PseudoClassStack({
+                    PseudoClass.HOVER: [Width.FULL],
+                    PseudoClass.FOCUS: [BorderColors({BorderColor.BORDER_FUCHSIA: 500})]
+                })
             ]
         }),  
     )

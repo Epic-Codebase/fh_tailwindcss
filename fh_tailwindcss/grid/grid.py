@@ -2,9 +2,10 @@ from fastcore.meta import delegates
 from fasthtml.common import *
 from ..tailwind import Tailwind
 from ..modifier import ResponsiveBreakpoint, ResponsiveBreakpointStack
-from ..utility import Margin, Margins, Gap, Gaps, Display
+from ..utility import Margin, Margins, Display
 from .grid_template_columns import GridTemplateColumns
 from .grid_template_rows import GridTemplateRows
+from .gap import Gap, Gaps
 
 # https://tailwindcss.com/docs/grid-template-columns
 

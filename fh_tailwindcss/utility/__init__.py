@@ -1,14 +1,32 @@
 from .border import (
-    BorderColor, BorderColors, BorderRadius, BorderStyle, BorderWidth, DivideUtilities, RingUtilities)
+    BorderColor, 
+    BorderColors, 
+    BorderRadius, 
+    BorderStyle, 
+    BorderWidth, 
+    DivideUtilities, 
+    RingUtilities)
 from .layout import Display
 from .sizing import Height, Width, Size, MaxWidth
-from .spacing import Gap, Gaps, Margin, Margins, Padding, Paddings
+from .spacing import Margin, Margins, Padding, Paddings
 from .typography import FontSize, FontWeight
+from .background import (
+    BackgroundAttachment,
+    BackgroundClip,
+    BackgroundColor, BackgroundColors,
+    BackgroundOrigin,
+    BackgroundPosition,
+    BackgroundRepeat,
+    BackgroundSize,
+    BackgroundImage,
+    GradientColorStop, GradientColorStops
+)
 
 __all__ = [
+    'BackgroundAttachment', 'BackgroundClip', 'BackgroundColor', 'BackgroundColors', 'BackgroundOrigin', 'BackgroundPosition', 'BackgroundRepeat', 'BackgroundSize', 'BackgroundImage', 'GradientColorStop', 'GradientColorStops',
     'BorderColor', 'BorderColors', 'BorderRadius', 'BorderStyle', 'BorderWidth', 'DivideUtilities', 'RingUtilities',
     'Display',
     'Height', 'Width', 'Size', 'MaxWidth',
-    'Gap', 'Gaps', 'Margin', 'Margins', 'Padding', 'Paddings',
+    'Margin', 'Margins', 'Padding', 'Paddings',
     'FontSize', 'FontWeight'
 ]

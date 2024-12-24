@@ -1,4 +1,4 @@
-from ...tailwind import TailwindEnum, TailwindDict
+from ..tailwind import TailwindEnum, TailwindDict
 
 # https://tailwindcss.com/docs/gap
 
@@ -18,9 +18,6 @@ class Gap(TailwindEnum):
     DEFAULT = "gap"
     X = "gap-x"
     Y = "gap-y"
-
-    def __css__(self) -> str:
-        return self.value if self else ""
     
 
 class Gaps(TailwindDict, dict[Gap, int]):

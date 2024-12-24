@@ -2,9 +2,10 @@ from fastcore.meta import delegates
 from fasthtml.common import *
 from ..tailwind import Tailwind
 from ..modifier import ResponsiveBreakpoint, ResponsiveBreakpointStack
-from ..utility import Gap, Gaps, Display
+from ..utility import Display
 from .grid_template_columns import GridTemplateColumns
 from .grid_template_rows import GridTemplateRows
+from .gap import Gap, Gaps
 
 @delegates(ft_hx, keep=True)
 class InlineGrid(Tailwind):
